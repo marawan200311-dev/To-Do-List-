@@ -1,48 +1,40 @@
-{%extends 'base.html' %}
+{%extends 'base.html' %} {%block head %}
 
- {%block head %}
- 
- <title>To Do List </title>
+<title>To Do List</title>
 
- {%endblock%}
+{%endblock%} {%block body %}
 
-  {%block body %}
-  
-  
-  <header>
-   <div>
+<header>
+  <div>
     <h1 class="h1">To Do List</h1>
   </div>
-  </header>
-  
-  
-  
-  <div>
-    <p id="text_add" >If you want to add any new assignment press here :</p>
-    <button class="Add">Add</button>
-  </div>
-   <hr>
-  
-   <div>
-    <p id="text_delete">If you want to delet any thing you add it be for press here</p>
-    <button class="Delete"> Delete</button>
+</header>
 
-   </div>
-  <hr>
-   <div>
-    <p id="text_update">If you want to Update your tasks press here: </p>
-    <button class="Update">Update</button>
-   </div>
-    <hr>
-
-   <div>
-      <p id="text_show">If you want to see you assignment for to day press here:</p>
-      <button class="Show">Show</button>
-   </div>
-
-     
-
+<div>
+  <p id="text_add">If you want to add any new assignment press here :</p>
   
- 
+  <button class="Add">Add</button>
+</div>
+<hr />
+
+<div>
+  <p id="text_delete">
+    If you want to delet any thing you add it be for press here
+  </p>
   
-  {%endblock%}
+  <button class="Delete">Delete</button>
+</div>
+<hr />
+
+<div>
+  <p id="text_update">If you want to Update your tasks press here:</p>
+  <button class="Update">Update</button>
+</div>
+<hr />
+
+<div>
+  <p id="text_show">If you want to see you assignment for to day press here:</p>
+  <button class="Show">Show</button>
+</div>
+
+{%endblock%}
