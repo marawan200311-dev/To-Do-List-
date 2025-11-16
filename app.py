@@ -1,4 +1,11 @@
-from flask import Flask, render_template ,url_for
+from flask import Flask, render_template ,url_for,request,redirect
+import sqlite3 
+import os
+db_py=os.path.join(os.path.dirname(__file__),'instance', 'data.db')
+from instance.databas import initialise_data, add_data
+
+
+
 
 app= Flask(__name__)
 @app.route('/')
@@ -8,6 +15,19 @@ def index():
 @app.route('/add_page')
 def add_page():
     return render_template('add.html')  
+
+@app.route('/add_assignment' ,methods=['POST'])
+def assignment ():
+   assignment=request.form['assignment']
+   date= request.form['date']
+   initialise_data()
+   add_data(assignment,date)
+   return render_template('add.html')
+
+@app.route('/skip')
+def skip ():
+   return redirect('/')
+
 
 
 @app.route('/delete_page') 
@@ -20,9 +40,6 @@ def update_index():
 @app.route('/show_page')
 def show_page():
     return render_template('update.html')
-
-
-
 if __name__=="__main__":
       app.run(debug=True)
 

@@ -2,5 +2,16 @@
 <title>Add page</title>
 {%endblock%}
  {%block body%}
-<p>Add page</p>
+<form action="/add_assignment" method="POST">
+ 
+  <label for="Date">What day is it</label><br>
+ 
+ <input type="date" name="date" id="Date" required ><br><br>
+ 
+  <label for="Assignment">Enter here your mission :)</label><br>
+  <input type="text" name="assignment" id="Assignment" placeholder="Type here....." required ><button type="submit">Add</button><br><br>
+  
+</form>
+ <button  type="button" class="Skip">Skip</button>
+
 {% endblock %}
