@@ -2,7 +2,7 @@ from flask import Flask, render_template ,url_for,request,redirect
 import sqlite3 
 import os
 db_py=os.path.join(os.path.dirname(__file__),'instance', 'data.db')
-from instance.databas import initialise_data, add_data, show_up
+from instance.databas import initialise_data, add_data, EmptyDataError
 
 
 
@@ -36,8 +36,8 @@ def update_index():
 
 @app.route('/show_page')
 def show_page():
-    data=show_up()
-    return render_template('show.html', schedule=data)
+    data=EmptyDataError.show_up()
+    return render_template('show.html',schedule=data)
 
 
 if __name__=="__main__":

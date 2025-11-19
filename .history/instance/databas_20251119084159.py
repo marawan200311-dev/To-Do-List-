@@ -8,17 +8,17 @@ def initialise_data():
   cursor.execute('''
   CREATE TABLE IF NOT EXISTS user_assignment( id INTEGER PRIMARY KEY AUTOINCREMENT,
   assignment TEXT NOT NULL ,
-data TEXT )
+date TEXT )
 ''')
 
 
 
 
 
-def add_data(assignment,data):
+def add_data(assignment,date):
    connect = sqlite3.connect('data.db')
    cursor= connect.cursor()
-   cursor.execute('INSERT INTO user_assignment (assignment,data) VALUES(?,?)', (assignment,data))
+   cursor.execute('INSERT INTO user_assignment (assignment,date) VALUES(?,?)', (assignment,date))
    connect.commit()
    connect.close()
 
@@ -30,13 +30,8 @@ def show_up():
   all_date = cursor.fetchall()
 
   schedule=[]
-  empty_schedule=[]
-  for data in all_date:
-    schedule.append(f'{data[0]}. Your mession {data[1]} You decided to do that in that time==>{data[2]}')
-  if len(schedule)==0 :
-    empty_schedule.append('YOU HAVE NOT ADD IT ANY THING YET!:)')
-    
-  return schedule
+  for date in all_date:
+    schedule.append(f'{date[0]}. Your mession {date[1]} {date[2]}')
     
 
   

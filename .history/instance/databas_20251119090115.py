@@ -33,10 +33,9 @@ def show_up():
   empty_schedule=[]
   for data in all_date:
     schedule.append(f'{data[0]}. Your mession {data[1]} You decided to do that in that time==>{data[2]}')
-  if len(schedule)==0 :
+  if len(schedule)=0 :
     empty_schedule.append('YOU HAVE NOT ADD IT ANY THING YET!:)')
     
-  return schedule
     
 
   

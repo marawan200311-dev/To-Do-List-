@@ -36,8 +36,8 @@ def update_index():
 
 @app.route('/show_page')
 def show_page():
-    data=show_up()
-    return render_template('show.html', schedule=data)
+    data=
+    return render_template('show.html')
 
 
 if __name__=="__main__":
