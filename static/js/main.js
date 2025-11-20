@@ -7,7 +7,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+const skip_showButton=document.querySelector('.Skip_Show');
+if(skip_showButton){
+    skip_showButton.addEventListener('click',()=>{
+        window.location ='/skip_show';
+    });
+}
 
+const skip_deleteButton=document.querySelector('.Skip_delete')
+if(skip_deleteButton){
+    skip_deleteButton.addEventListener('click',()=>{
+        window.location ='/skip_delete'
+    });
+}
 
 
 const addButton = document.querySelector('.Add');

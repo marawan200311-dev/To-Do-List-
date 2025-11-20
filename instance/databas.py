@@ -30,13 +30,33 @@ def show_up():
   all_date = cursor.fetchall()
 
   schedule=[]
-  empty_schedule=[]
   for data in all_date:
-    schedule.append(f'{data[0]}. Your mession {data[1]} You decided to do that in that time==>{data[2]}')
+    schedule.append(f'{data[0]}. Your mession {data[1]} You decided to do that in this time==>{data[2]}')
   if len(schedule)==0 :
-    empty_schedule.append('YOU HAVE NOT ADD IT ANY THING YET!:)')
-    
+    print('The user does not add anything :)')
   return schedule
+
+
+def delete (assignmentNumber):
+  connect = sqlite3.connect('data.db')
+  cursor= connect.cursor()
+
+  cursor.execute('SELECT * FROM user_assignment WHERE id=?', (assignmentNumber,))
+  row= cursor.fetchone()
+  if row is None:
+   return f"This {row} doesn't valid "
+  cursor.execute('DELETE FROM user_assignment WHERE id = ? ', (assignmentNumber,))
+  connect.commit()
+  connect.close()
+  return True
+  
+
+
+ 
+
+
+
+
     
 
   
