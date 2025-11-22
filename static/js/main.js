@@ -14,6 +14,18 @@ if(skip_showButton){
     });
 }
 
+const skip_updateButton =document.querySelector('.Skip_update')
+if(skip_updateButton){
+    skip_updateButton.addEventListener('click',()=>{
+        window.location ='/skip_update';
+});
+}
+    
+
+
+
+
+
 const skip_deleteButton=document.querySelector('.Skip_delete')
 if(skip_deleteButton){
     skip_deleteButton.addEventListener('click',()=>{
@@ -66,7 +78,6 @@ const showButton = document.querySelector('.Show')
 showButton.addEventListener('click',()=>{
 window.open('/show_page','_blank')
 });
-
 
 
 

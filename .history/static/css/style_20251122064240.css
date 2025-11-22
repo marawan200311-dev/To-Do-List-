@@ -1,0 +1,30 @@
+.h1{
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+
+#text_add {
+   display: inline;
+}
+#text_update{
+  display: inline;
+}
+
+#text_show{
+  display: inline;
+}
+#text_delete{
+  display: inline;
+}
+.Show{
+  text-align: center;
+  
+}
+.Delete_logo{
+  text-align: center;
+}
+.logo_of_update{
+  text-align: center;
+}
+
+.update_schedule

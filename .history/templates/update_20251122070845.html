@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%block head%}
+<title>update page</title>
+{%endblock%}
+{%block body%}
+<h2 class="logo_of_update">Update Your Assignment</h2>
+<hr>
+<div>
+  <p class="Update_schedule">YOUR SCHEDULE :</p>
+  {% if data %}
+    {% for item in data %}
+        <p>{{ item }}</p>
+    {% endfor %}
+{% else %}
+    <p>You haven't added anything yet to updata :)!</p>
+{% endif %}
+</div>
+<hr><br><br>
+<form action="/update_new_assignment" method="POST">
+    <label for="ID">Number's mission</label>
+    <input type="number" name="id" value="{{id}}">
+    <label for="assignment">Assignment</label>
+    <input type="text" name="assignment" value="{{assignment}}" id="assignment">
+    <label for="date">Date</label>
+    <input type="date" name="date" value="{{date}}">
+     <button type="submit">submit</button>
+</form>
+<p>"If you type the wrong number for your mission, the update will be ignored or will affect something related to that number.</p>
+<button class="Skip_update">Skip</button>
+{%endblock%}

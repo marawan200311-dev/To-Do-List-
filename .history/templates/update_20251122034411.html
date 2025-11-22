@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+{%block head%}
+<title>update page</title>
+{%endblock%}
+{%block body%}
+<h2 class="logo_of_update">Update Your Assignment</h2>
+<hr>
+<div>
+  {% if data %}
+    {% for item in data %}
+        <p>{{ item }}</p>
+    {% endfor %}
+{% else %}
+    <p>You haven't added anything yet to updata :)!</p>
+{% endif %}
+</div>
+<form action="/update_new_assignment" method="POST">
+    <input type="text">
+
+</form>
+<button class="Skip_update">Skip</button>
+{%endblock%}

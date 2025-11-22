@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{%block head%}
+<title>update page</title>
+{%endblock%}
+{%block body%}
+<h2 class="logo_of_update">Update Your Assignment</h2>
+<hr>
+<div>
+  {% if data %}
+    {% for row in data %}
+        <p>
+              {{ row[1] }} - {{ row[2] }}
+    <a href="/edit/{{ row[0] }}">Edit</a>
+        </p>
+    {% endfor %}
+{% else %}
+    <p>You haven't added anything yet to updata :)!</p>
+{% endif %}
+</div>
+<form action="/update_new_assignment" method="POST">
+    <input type="hidden" name="id" value="{{id}}">
+
+</form>
+<button class="Skip_update">Skip</button>
+{%endblock%}
